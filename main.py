@@ -1,18 +1,20 @@
-# main.py -- put your code here!
-import network
-import urequests as requests
+import requests
 
-addr = "10.23.17.178"
-port = "5000"
-username = "Team x"
+addr = "crawdad-humble-usually.ngrok-free.app"
 
-response = requests.get(f'http://{addr}:{port}/register?username={username}')
-if 'already' in response.text:
-    print(response.text)
-    exit(0)
-id = response.text[-32:]
+# id will be automatically set, but save it in case the script errors
+id = ''
+
+while not id:
+    username = input("Choose your team name: ")
+    response = requests.get(f'http://{addr}/register?username={username}')
+    if 'already' in response.text:
+        print(response.text)
+    else:
+        print(response.text)
+        id = response.text[-32:]
 
 while True:
     choice = input("Type your answer: ")
-    response = requests.get(f'http://{addr}:{port}/answer?id={id}&choice={choice}')
+    response = requests.get(f'http://{addr}/answer?id={id}&choice={choice}')
     print(response.text)

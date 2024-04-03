@@ -1,4 +1,4 @@
-import esptool 
+import esptool
 
 command = ['--port','COM4', 'erase_flash']
 esptool.main(command)
