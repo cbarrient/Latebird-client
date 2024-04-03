@@ -1,11 +1,9 @@
-Get board
+https://www.instructables.com/The-Super-Easy-Micropython-ESP8266-Guide-No-Guessw/
 
 install python
 install esptool
 download firmware
-flash firmware
-
-https://www.instructables.com/The-Super-Easy-Micropython-ESP8266-Guide-No-Guessw/
+plug in board & flash firmware
 
 install putty
 connect to chip
