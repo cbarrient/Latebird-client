@@ -30,7 +30,7 @@ else:
             print(response.text)
         else:
             print(response.text)
-            id = response.text[-32:]
+            id = response.text[-8:]
 
 print("You can now participate in the quiz! Press any button to send your answer:")
 
