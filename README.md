@@ -98,12 +98,11 @@ Press connect and input your password.
 
 10. Upload boot.py & reset board
 
-Upload `boot.py` to automate the steps you just completed (connecting to WiFi and launching WebREPL).
-After uploading the file, press the `Reset button on your board` and reconnect via WebREPL.
+Upload `boot.py` to automate the steps you just completed (connecting to WiFi and launching WebREPL). After uploading the file, press the `Reset` button on your board.
 
-Note that the reset waits for 10 seconds to ensure the WiFi connection is stable.
+Note that the reset waits for 10 seconds to ensure the WiFi connection is stable. You can check the progress on the PuTTy screen. Once the WebREPL server is launched, you can reconnect.
 
-11.  Upload and run test-led file
+1.   Upload and run test-led file
 
 Upload `main.py` located in the `test-led` folder. Then reset the board.
 After some time, the board's LED should start blinking.
