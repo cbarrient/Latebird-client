@@ -21,7 +21,14 @@ def send_answer(addr, id, choice):
 skip = input("Press enter to continue: ")
 registered = input("Have you already registered? yes/no ")
 if registered[0].lower() == 'y':
-    id = input("Please enter your team ID: ")
+    while not id:
+        id = input("Please enter your team ID: ")
+        response = requests.get(f'http://{addr}/login?id={id}')
+        if 'exist' in response.text:
+            print(response.text)
+        else:
+            print(response.text)
+            id = id
 else:
     while not id:
         username = input("Please enter your team name: ")
