@@ -22,13 +22,13 @@ skip = input("Press enter to continue: ")
 registered = input("Have you already registered? yes/no ")
 if registered[0].lower() == 'y':
     while not id:
-        id = input("Please enter your team ID: ")
-        response = requests.get(f'http://{addr}/login?id={id}')
+        id_test = input("Please enter your team ID: ")
+        response = requests.get(f'http://{addr}/login?id={id_test}')
         if 'exist' in response.text:
             print(response.text)
         else:
             print(response.text)
-            id = id
+            id = id_test
 else:
     while not id:
         username = input("Please enter your team name: ")

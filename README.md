@@ -69,8 +69,8 @@ Once connected, press enter and type `help()` to see if the board is working pro
 7. Connect the board to WiFi
 
 Copy the commands shown in the output of the `help()` command, replacing:
-- <AP_name> with the WiFi name
-- <key> with the WiFi password
+- `<AP_name>` with the WiFi name
+- `<key>` with the WiFi password
 
 ![alt text](./images/wifi.png)
 
@@ -103,17 +103,32 @@ After uploading the file, press the `Reset button on your board` and reconnect v
 
 Note that the reset waits for 10 seconds to ensure the WiFi connection is stable.
 
-11.  Upload and run test file
+11.  Upload and run test-led file
 
-Upload `main.py` located in the `test` folder. Then reset the board.
+Upload `main.py` located in the `test-led` folder. Then reset the board.
 After some time, the board's LED should start blinking.
 
 **If you are the first to finish this step, raise your hand to get a bonus point!**
 
-12. Build basic circuit
+12. Build answering console and run test-button file
 
+Use the breadboard to connect 4 buttons to your board. The buttons are mapped to the following pins:
+```
+A => D5
+B => D1
+C => D6
+D => D2
+```
+
+Here's a schematic of the board. Connect each button to its corresponding pin and to ground.
 ![alt text](./images/pins.jpeg)
 
-13. Configure & upload real main.py
+Once everything is connected, upload `main.py` located in the `test-button` folder. Then reset the board. Now you can press each button and verify if they are working.
 
-14. Play quiz
+**If you are the first to finish this step, raise your hand to get a bonus point!**
+
+13.  Play quiz
+
+Now upload `main.py` located in the root folder and restart the chip. Follow the instructions on your screen. The script will ask for a team name and give you your ID. **Write that ID down in case your chip needs to be reset!**
+
+Good luck and have fun!
