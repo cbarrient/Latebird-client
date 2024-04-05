@@ -82,7 +82,7 @@ Once connected, press enter and type `help()` to see if the board is working pro
 
 **If you are the first to finish this step, raise your hand to get a bonus point!**
 
-1. Connect the board to WiFi
+9. Connect the board to WiFi
 
 Copy the commands shown in the output of the `help()` command, replacing:
 - `<AP_name>` with the WiFi name
