@@ -15,13 +15,23 @@ In front of you are:
 
 ## Instructions
 
-1. Install python
+1. Download the repository to your PC
+
+If you have Git installed, do:
+```cmd
+git clone https://github.com/JulesOO/Latebird-client.git
+```
+
+Otherwise, just download the repository as a ZIP file by clicking `<> Code` and `Download ZIP`:
+![alt text](images/zip.png)
+
+2. Install python
 
 Get it from [GHD software](https://mckinsey.service-now.com/ghd?id=mck_app_cat_item&sys_id=f13b9e1fdb55bf00c6722dcb0b96193b&class=pc_software_cat_item&utm_source=ghd_website&utm_medium=web&utm_content=search_results)
 
-2. Install esptool
+3. Install esptool
 
-Open command prompt in the correct folder by navigating to the folder in file explorer and typing `cmd` in the address bar
+Open command prompt in your `Latebird-client` folder by navigating to the folder in file explorer and typing `cmd` in the address bar
 
 ![alt text](./images/searchbar.png)
 
@@ -31,12 +41,17 @@ In the command prompt, type:
 py -m pip install esptool
 ```
 
-3. Plug in board and find serial port
+4. Install CH340 drivers
+
+Go to the `CH340-drivers` folder and run `SETUP.EXE`. Then install.
+
+5. Plug in board and find serial port
 
 Press Windows key, type `device manager` and look for `Ports (COM & LPT)`.
-Open the drop-down menu and check if the board is connected to `COM3` or `COM4`.
+Open the drop-down menu and check which port the board is connected to (`COM3`, `COM4`, ...)
+![alt text](./images/COM.png)
 
-4. Flash firmware onto board
+6. Flash firmware onto board
 
 Plug in board, go to command prompt and type:
 ```cmd
@@ -45,11 +60,11 @@ py flashfirmware.py
 
 The program will ask which serial port the board is connected to. Type in the correct port.
 
-5. Install putty
+7. Install putty
 
 Get it from [GHD software](https://mckinsey.service-now.com/ghd?id=mck_app_cat_item&sys_id=5d6f99dddbf80f80b332f3561d961947&class=pc_software_cat_item&utm_source=ghd_website&utm_medium=web&utm_content=search_results)
 
-6. Connect to board
+8. Connect to board
 
 - Set connection type to `serial`
 - Type in the correct serial port 
@@ -64,7 +79,7 @@ Once connected, press enter and type `help()` to see if the board is working pro
 
 **If you are the first to finish this step, raise your hand to get a bonus point!**
 
-7. Connect the board to WiFi
+9. Connect the board to WiFi
 
 Copy the commands shown in the output of the `help()` command, replacing:
 - `<AP_name>` with the WiFi name
@@ -74,7 +89,7 @@ Copy the commands shown in the output of the `help()` command, replacing:
 
 If done correctly, the output of the final command should be `True`
 
-8. Launch WebREPL on board
+10. Launch WebREPL on board
 
 First type `import webrepl_setup`, then `E` and then choose a password.
 
@@ -87,27 +102,27 @@ After rebooting, the board will display two IP addresses.
 - The first ip is on the network hosted by the board
 - The second ip is on the WiFi network, use this one
 
-9. Open WebREPL and connect to board
+11. Open WebREPL and connect to board
 
 Open [WebREPL](./webrepl-master/webrepl.html) and type in the ip address you got in the previous step.
 Press connect and input your password.
 
 ![alt text](./images/webrepl.png)
 
-10. Upload boot.py & reset board
+12. Upload boot.py & reset board
 
 Upload `boot.py` to automate the steps you just completed (connecting to WiFi and launching WebREPL). After uploading the file, press the `Reset` button on your board.
 
 Note that the reset waits for 10 seconds to ensure the WiFi connection is stable. You can check the progress on the PuTTy screen. Once the WebREPL server is launched, you can reconnect.
 
-1.   Upload and run test-led file
+13.   Upload and run test-led file
 
 Upload `main.py` located in the `test-led` folder. Then reset the board.
 After some time, the board's LED should start blinking.
 
 **If you are the first to finish this step, raise your hand to get a bonus point!**
 
-12. Build answering console and run test-button file
+14. Build answering console and run test-button file
 
 Use the breadboard to connect 4 buttons to your board. The buttons are mapped to the following pins:
 ```
@@ -124,7 +139,7 @@ Once everything is connected, upload `main.py` located in the `test-button` fold
 
 **If you are the first to finish this step, raise your hand to get a bonus point!**
 
-13.  Play quiz
+15.  Play quiz
 
 Now upload `main.py` located in the root folder and restart the chip. Follow the instructions on your screen. The script will ask for a team name and give you your ID. **Write that ID down in case your chip needs to be reset!**
 
