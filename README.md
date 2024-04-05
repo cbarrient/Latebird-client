@@ -105,9 +105,10 @@ After rebooting, the board will display two IP addresses.
 - The first ip is on the network hosted by the board
 - The second ip is on the WiFi network, use this one
 
-11. Open WebREPL and connect to board
+11.  Open WebREPL and connect to board
 
-Open [WebREPL](./webrepl-master/webrepl.html) and type in the ip address you got in the previous step.
+Make sure your PC is connected to the same network as the one on the board.
+Then, open [WebREPL](./webrepl-master/webrepl.html) and type in the ip address you got in the previous step.
 Press connect and input your password.
 
 ![alt text](./images/webrepl.png)
