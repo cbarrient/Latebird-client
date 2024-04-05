@@ -66,10 +66,13 @@ Get it from [GHD software](https://mckinsey.service-now.com/ghd?id=mck_app_cat_i
 
 8. Connect to board
 
+Open Putty and configure the connecton:
+
 - Set connection type to `serial`
-- Type in the correct serial port 
+- Type in the correct serial line 
 - Set speed to 115200
-- Press save for future connections
+
+Under saved sessions, type `MicroPython` and then press `Save` to save the configuration for future connections.
 
 ![alt text](./images/putty.png)
 
@@ -79,7 +82,7 @@ Once connected, press enter and type `help()` to see if the board is working pro
 
 **If you are the first to finish this step, raise your hand to get a bonus point!**
 
-9. Connect the board to WiFi
+1. Connect the board to WiFi
 
 Copy the commands shown in the output of the `help()` command, replacing:
 - `<AP_name>` with the WiFi name
