@@ -117,7 +117,7 @@ Press connect and input your password.
 
 Upload `boot.py` to automate the steps you just completed (connecting to WiFi and launching WebREPL). After uploading the file, press the `Reset` button on your board.
 
-Note that the reset waits for 10 seconds to ensure the WiFi connection is stable. You can check the progress on the PuTTy screen. Once the WebREPL server is launched, you can reconnect.
+Note that the reset waits for 10 seconds to ensure the WiFi connection is stable. You can check the progress on the PuTTy screen. Once the WebREPL server is launched, you can reconnect on WebREPL.
 
 13.   Upload and run test-led file
 
@@ -128,7 +128,7 @@ After some time, the board's LED should start blinking.
 
 14. Build answering console and run test-button file
 
-Use the breadboard to connect 4 buttons to your board. The buttons are mapped to the following pins:
+Use the breadboard to connect 4 buttons to your board. The buttons represent the multiple choice answers for the quiz. The buttons are mapped to the following pins:
 ```
 A => D5
 B => D1

@@ -1,4 +1,4 @@
-import requests
+import urequests as requests
 import machine
 import time
 
