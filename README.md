@@ -15,8 +15,6 @@ In front of you are:
 
 ## Instructions
 
-https://www.instructables.com/The-Super-Easy-Micropython-ESP8266-Guide-No-Guessw/
-
 1. Install python
 
 Get it from [GHD software](https://mckinsey.service-now.com/ghd?id=mck_app_cat_item&sys_id=f13b9e1fdb55bf00c6722dcb0b96193b&class=pc_software_cat_item&utm_source=ghd_website&utm_medium=web&utm_content=search_results)
