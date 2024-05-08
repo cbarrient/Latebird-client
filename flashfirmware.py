@@ -1,6 +1,6 @@
 import esptool
 
-port = input("Which serial port is your board connected to? Please type the full name, e.g. COM3 ")
+port = input("Which serial port is your board connected to? Please type the full name, e.g. COM3: ")
 
 command = ['--port', port, 'erase_flash']
 esptool.main(command)
