@@ -141,6 +141,7 @@ Here's the schematic of the board. Connect the `Green` LED to `D8` and the `Red`
 
 Once everything is connected, upload `main.py` located in the `ex2-ext-led` folder. Then reset the board. 
 Once you reconnect to WebREPL, you should see a prompt to ask which LED you want to blink.
+
 ![alt text](./images/blink.png)
 
 **If you are the first to finish this step, raise your hand to get a bonus point!**
@@ -149,6 +150,7 @@ Once you reconnect to WebREPL, you should see a prompt to ask which LED you want
 
 Use the breadboard and cables to connect the buzzer to your board.
 Here's the schematic of the board. Connect the buzzer to Pin `D4` and to ground.
+
 ![alt text](./images/pins.jpeg)
 
 Once everything is connected, upload `main.py` located in the `ex3-buzzer` folder. Then reset the board. Now you should hear the start of `Frère Jacques`.
