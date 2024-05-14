@@ -51,6 +51,7 @@ Go to the `CH340-drivers` folder and run `SETUP.EXE`. Then install.
 
 Press Windows key, type `device manager` and look for `Ports (COM & LPT)`.
 Open the drop-down menu and check which port the board is connected to (`COM3`, `COM4`, ...)
+
 ![alt text](./images/COM.png)
 
 ### 6. Flash firmware onto board
