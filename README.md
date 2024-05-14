@@ -12,6 +12,8 @@ In front of you are:
 - Breadboard
 - Connectors
 - 4 Buttons
+- 2 LEDs
+- Buzzer
 
 ## Instructions
 
