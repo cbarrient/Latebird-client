@@ -136,6 +136,7 @@ After some time, the board's LED should start blinking.
 
 Use the breadboard and cables to connect a `Green` and `Red` LED to your board.
 Here's the schematic of the board. Connect the `Green` LED to `D8` and the `Red` LED to `D7`. Then connect both LEDs to ground.
+
 ![alt text](./images/pins.jpeg)
 
 Once everything is connected, upload `main.py` located in the `ex2-ext-led` folder. Then reset the board. 
