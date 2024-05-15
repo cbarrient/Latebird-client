@@ -141,7 +141,7 @@ After some time, the board's LED should start blinking.
 ### 14. Exercise 2: Test external LED
 
 Use the breadboard and cables to connect a `Green` and `Red` LED to your board.
-Here's the schematic of the board. Connect the `Green` LED to `D8` and the `Red` LED to `D7`. Then connect both LEDs to ground.
+Here's the schematic of the board. Connect the `Green` LED to `D8` and the `Red` LED to `D7`. Then connect both LEDs to ground, the shortest leg of the leds should be connected to ground.
 
 ![alt text](./images/pins.jpeg)
 
