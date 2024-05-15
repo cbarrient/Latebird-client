@@ -42,6 +42,11 @@ In the command prompt, type:
 ```cmd
 py -m pip install esptool
 ```
+If the above command doesn't work type the one below:
+
+```cmd
+python3 -m pip install esptool
+```
 
 ### 4. Install CH340 drivers
 
