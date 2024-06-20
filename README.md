@@ -129,8 +129,6 @@ Press connect and input your password.
 
 Upload `boot.py` to automate the steps you just completed (connecting to WiFi and launching WebREPL). After uploading the file, press the `Reset` button on your board.
 
-[//]: <> (![alt text](./images/reset.jpeg))
-
 Note: The chip needs a couple of seconds to reboot and connect to WiFi. To indicate the wait, the chip's LED will light up until the connection is established. Once the LED powers off, the WebREPL server is launched and you can reconnect on WebREPL.
 
 ### 13. Exercise 1: Test on-board LED
@@ -145,7 +143,6 @@ After some time, the board's LED should start blinking.
 Use the breadboard and cables to connect a `Green` and `Red` LED to your board.
 Here's the schematic of the board. Connect the `Green` LED to `D8` and the `Red` LED to `D7`. Then connect both LEDs to ground, the shortest leg of the leds should be connected to ground.
 
-[//]: <> (![alt text](./images/pins.jpeg))
 ![alt text](./images/nodemcu-esp8266-board.png)
 
 Once everything is connected, upload `main.py` located in the `ex2-ext-led` folder. Then reset the board. 
@@ -160,7 +157,6 @@ Once you reconnect to WebREPL, you should see a prompt to ask which LED you want
 Use the breadboard and cables to connect the buzzer to your board.
 Here's the schematic of the board. Connect the buzzer to Pin `D4` and to ground.
 
-[//]: <> (![alt text](./images/pins.jpeg))
 ![alt text](./images/nodemcu-esp8266-board.png)
 
 Once everything is connected, upload `main.py` located in the `ex3-buzzer` folder. Then reset the board. Now you should hear the start of `Frère Jacques`.
@@ -176,7 +172,6 @@ D => D2
 ```
 
 Here's the schematic of the board. Connect each button to its corresponding pin and to ground.
-[//]: <> (![alt text](./images/pins.jpeg))
 ![alt text](./images/nodemcu-esp8266-board.png)
 
 Once everything is connected, upload `main.py` located in the `ex4-button` folder. Then reset the board. 
