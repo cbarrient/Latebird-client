@@ -161,7 +161,7 @@ The buttons represent the multiple choice answers for the quiz. Use the breadboa
 
 A breadboard consists of rows 1, 2, ..., 30, and columns a, b,..., j. The breadboard can be divided in 2 areas: 
 * Area I: Column a till e
-* Area II: Column f till J
+* Area II: Column f till j
 
 All pins that are plugged into the same row within the same area are connected with each other, i.e., all pins in row 1 from column a till e are connected, all pins in row 1 from column f till j are connected.
 
@@ -175,13 +175,13 @@ B => D1
 C => D6
 D => D2
 ```
-Connect the other pin of the button with the ground `GND`. Repeat this for all buttons. Note that you can connect the ground to an empty row on your breadboard to connect multiple elements to it.
-* Step 3: the element is now connected to the chip
-
-Here's the schematic of the board. Connect each button to its corresponding pin and to ground.
+Connect the other pin of the button with the ground `GND`. Here's the schematic of the board. Connect each button to its corresponding pin and to ground.
 ![alt text](./images/nodemcu-esp8266-board.png)
 
-Once everything is connected, upload `main.py` located in the `ex4-button` folder. Then reset the board. 
+Repeat this for all buttons. Note that you can connect the ground to an empty row on your breadboard to connect multiple elements to it.
+* Step 3: the element is now connected to the chip
+
+Once everything is connected, upload `main.py` located in the `ex2-button` folder. Then reset the board. 
 Once you reconnect to WebREPL, you can press each button and verify if they are working.
 
 **If you are the first to finish this step, raise your hand to get a bonus point!**
@@ -193,7 +193,7 @@ Here's the schematic of the board. Connect the `Green` LED to `D8` and the `Red`
 
 ![alt text](./images/nodemcu-esp8266-board.png)
 
-Once everything is connected, upload `main.py` located in the `ex2-ext-led` folder. Then reset the board. 
+Once everything is connected, upload `main.py` located in the `ex3-ext-led` folder. Then reset the board. 
 Once you reconnect to WebREPL, you should press `Enter` and see a prompt to ask which LED you want to blink. Note that python is case-sensitive.
 
 ![alt text](./images/blink.png)
@@ -207,7 +207,7 @@ Here's the schematic of the board. Connect the buzzer to Pin `D4` and to ground.
 
 ![alt text](./images/nodemcu-esp8266-board.png)
 
-Once everything is connected, upload `main.py` located in the `ex3-buzzer` folder. Then reset the board. Now you should hear the start of `Frère Jacques`.
+Once everything is connected, upload `main.py` located in the `ex4-buzzer` folder. Then reset the board. Now you should hear the start of `Frère Jacques`.
 
 ### 17. Exercise 5: Register for the quiz
 
@@ -215,7 +215,7 @@ Now upload `main.py` located in the `ex5-quiz-basic` folder and restart the chip
 
 **If you are the first to finish this step, raise your hand to get a bonus point!**
 
-### 18. Exercise 6: Pimp your answering station with LEDs
+### 18. Exercise 6 (optional): Pimp your answering station with LEDs
 
 Write code to make the `Green` and `Red` LEDs light up based on your quiz answer. 
 When you answer the question correctly, the quiz sends you `Correct`. Light up the `Green` LED in this case.
@@ -231,7 +231,7 @@ Edit the `main.py` file located in the `ex6-quiz-led` folder to implement this l
 
 **If you are the first to finish this step, raise your hand to get a bonus point!**
 
-### 19. Exercise 7: Get creative!
+### 19. Exercise 7 (optional): Get creative!
 
 Let your imagination run wild and build whatever you want!
 You can come up to the front if you need extra components.
