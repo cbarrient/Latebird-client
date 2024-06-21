@@ -50,14 +50,20 @@ python3 -m pip install esptool
 
 ### 4. Install CH340/CH210x drivers
 
-Go to the `CH340-drivers` folder and run `SETUP.EXE`. Then install.
+Go to the `CH210x-drivers` folder and run `CP210xVCPInstaller_x64.exe`. Then install.
 
-Alternatively, go to the `CH210x-drivers` folder and run `CP210xVCPInstaller_x64.exe`. Then install.
+Alternative install the driver [here](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads) 
 
 ### 5. Plug in board and find serial port
 
 Press Windows key, type `device manager` and look for `Ports (COM & LPT)`.
 Open the drop-down menu and check which port the board is connected to (`COM3`, `COM4`, ...)
+
+For mac users, find the serial port of the connected devices by entering the following command in Terminal:
+
+```cmd
+ls /dev/tty.*
+```
 
 ![alt text](./images/COM.png)
 
@@ -98,13 +104,21 @@ Copy the commands shown in the output of the `help()` command, replacing:
 - `<AP_name>` with the WiFi name
 - `<key>` with the WiFi password
 
-![alt text](./images/wifi.png)
-
+```cmd
+import netwwork
+sta_if  = network.WLAN(network.STA_IF); sta_if.active(True)
+sta_if.connect("<AP_name>", "<key>")
+sta_if.isconnected()
+```
 If done correctly, the output of the final command should be `True`
 
 ### 10. Launch WebREPL on board
 
 First type `import webrepl_setup`, then `E` and then choose a password.
+
+```cmd
+import webrepl_setup
+``
 
 ![alt text](./images/webreplsetup.png)
 
