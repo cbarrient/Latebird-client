@@ -52,11 +52,11 @@ python3 -m pip install esptool
 
 Go to the `CH210x-drivers` folder and run `CP210xVCPInstaller_x64.exe`. Then install.
 
-Alternative install the driver [here](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads) 
+For mac users, go to `CH210x-drivers/macOS` folder and run `SiLabsUSBDriverDisk.dmg`.
 
 ### 5. Plug in board and find serial port
 
-Press Windows key, type `device manager` and look for `Ports (COM & LPT)`.
+For windows users, press Windows key, type `device manager` and look for `Ports (COM & LPT)`.
 Open the drop-down menu and check which port the board is connected to (`COM3`, `COM4`, ...)
 
 For mac users, find the serial port of the connected devices by entering the following command in Terminal:
@@ -65,11 +65,9 @@ For mac users, find the serial port of the connected devices by entering the fol
 ls /dev/tty.*
 ```
 
-![alt text](./images/COM.png)
-
 ### 6. Flash firmware onto board
 
-Plug in board, go to command prompt and type:
+Plug in the board on your computer, go to command prompt and type:
 ```cmd
 py flashfirmware.py
 ```
@@ -101,13 +99,14 @@ Once connected, press enter and type `help()` to see if the board is working pro
 ### 9. Connect the board to WiFi
 
 Copy the commands shown in the output of the `help()` command, replacing:
-- `<AP_name>` with the WiFi name
-- `<key>` with the WiFi password
+- `<AP_name>` with the WiFi name `Silversquare Guest`
+- `<key>` with the WiFi password `@smile24` 
 
 ```cmd
 import netwwork
 sta_if  = network.WLAN(network.STA_IF); sta_if.active(True)
-sta_if.connect("<AP_name>", "<key>")
+# sta_if.connect("<AP_name>", "<key>")
+sta_if.connect("Silversquare Guest", "@smile24")
 sta_if.isconnected()
 ```
 If done correctly, the output of the final command should be `True`
@@ -122,17 +121,20 @@ import webrepl_setup
 
 ![alt text](./images/webreplsetup.png)
 
-After rebooting, the board will display two IP addresses.
+After rebooting, the board will display two IP addresses. Type the following to get your IP address on the WiFi network:
 
-![alt text](./images/webreplip.png)
+```cmd
+import network
+wlan = network.WLAN(network.STA_IF)
+wlan.ifconfig()
+```
 
-- The first ip is on the network hosted by the board
-- The second ip is on the WiFi network, use this one
+The first IP address shown in the list should be used together with port `8266` to connect with the board.
 
 ### 11.  Open WebREPL and connect to board
 
-Make sure your PC is connected to the same network as the one on the board.
-Then, open [WebREPL](./webrepl-master/webrepl.html) and type in the ip address you got in the previous step. 
+Make sure your PC is connected to the *same network* as the one on the board.
+Then, open [WebREPL](./webrepl-master/webrepl.html) in *your web browser* (e.g., chrome, firefox, safari) and type in the IP address you got in the previous step and its port.
 Note: you have to prefix the IP with `ws://` and not `http://`
 
 Press connect and input your password.
@@ -143,47 +145,38 @@ Press connect and input your password.
 
 Upload `boot.py` to automate the steps you just completed (connecting to WiFi and launching WebREPL). After uploading the file, press the `Reset` button on your board.
 
+**IMPORTANT: every time you press the `Reset` button on your board, you will need to reload the WebREPL page and reconnect with the board.**
+
 Note: The chip needs a couple of seconds to reboot and connect to WiFi. To indicate the wait, the chip's LED will light up until the connection is established. Once the LED powers off, the WebREPL server is launched and you can reconnect on WebREPL.
 
 ### 13. Exercise 1: Test on-board LED
 
-Upload `main.py` located in the `ex1-board-led` folder. Then reset the board.
-After some time, the board's LED should start blinking.
+Upload `main.py` located in the `ex1-board-led` folder. Then reset the board. 
+After some time, the board's LED should start blinking. Reminder: every time you press the `Reset` button on your board, you will need to reload the WebREPL page and reconnect with the board.
 
 **If you are the first to finish this step, raise your hand to get a bonus point!**
 
-### 14. Exercise 2: Test external LED
+### 14.  Exercise 2: Test buttons
+The buttons represent the multiple choice answers for the quiz. Use the breadboard and cables to connect 4 buttons to your board.
 
-Use the breadboard and cables to connect a `Green` and `Red` LED to your board.
-Here's the schematic of the board. Connect the `Green` LED to `D8` and the `Red` LED to `D7`. Then connect both LEDs to ground, the shortest leg of the leds should be connected to ground.
+A breadboard consists of rows 1, 2, ..., 30, and columns a, b,..., j. The breadboard can be divided in 2 areas: 
+* Area I: Column a till e
+* Area II: Column f till J
 
-![alt text](./images/nodemcu-esp8266-board.png)
+All pins that are plugged into the same row within the same area are connected with each other, i.e., all pins in row 1 from column a till e are connected, all pins in row 1 from column f till j are connected.
 
-Once everything is connected, upload `main.py` located in the `ex2-ext-led` folder. Then reset the board. 
-Once you reconnect to WebREPL, you should see a prompt to ask which LED you want to blink.
-
-![alt text](./images/blink.png)
-
-**If you are the first to finish this step, raise your hand to get a bonus point!**
-
-### 15.  Exercise 3 (optional): Test external buzzer
-
-Use the breadboard and cables to connect the buzzer to your board.
-Here's the schematic of the board. Connect the buzzer to Pin `D4` and to ground.
-
-![alt text](./images/nodemcu-esp8266-board.png)
-
-Once everything is connected, upload `main.py` located in the `ex3-buzzer` folder. Then reset the board. Now you should hear the start of `Frère Jacques`.
-
-### 16.  Exercise 4: Test buttons
-
-Use the breadboard and cables to connect 4 buttons to your board. The buttons represent the multiple choice answers for the quiz. The buttons are mapped to the following pins:
+You can connect  an element (such as a button/LED/buzzer) to your board as follows:
+* Step 0: plug in the chip on your breadboard by inserting the pins in column b and i
+* Step 1: insert the buttons in a comfortable layout that allow you to answer multiple choice questions A, B, C and D. Ideally this could be done on a second breadbord to allow for the best quiz experience
+* Step 2: connect the buttons through connecing one pin of the button with the correct pin on the chip through a cable. The buttons are mapped to the following pins:
 ```
 A => D5
 B => D1
 C => D6
 D => D2
 ```
+Connect the other pin of the button with the ground `GND`. Repeat this for all buttons. Note that you can connect the ground to an empty row on your breadboard to connect multiple elements to it.
+* Step 3: the element is now connected to the chip
 
 Here's the schematic of the board. Connect each button to its corresponding pin and to ground.
 ![alt text](./images/nodemcu-esp8266-board.png)
@@ -192,6 +185,29 @@ Once everything is connected, upload `main.py` located in the `ex4-button` folde
 Once you reconnect to WebREPL, you can press each button and verify if they are working.
 
 **If you are the first to finish this step, raise your hand to get a bonus point!**
+
+### 15. Exercise 3 (optional): Test external LED
+
+Use the breadboard and cables to connect a `Green` and `Red` LED to your board.
+Here's the schematic of the board. Connect the `Green` LED to `D8` and the `Red` LED to `D7`. Then connect both LEDs to ground, the shortest leg of the leds should be connected to ground.
+
+![alt text](./images/nodemcu-esp8266-board.png)
+
+Once everything is connected, upload `main.py` located in the `ex2-ext-led` folder. Then reset the board. 
+Once you reconnect to WebREPL, you should press `Enter` and see a prompt to ask which LED you want to blink. Note that python is case-sensitive.
+
+![alt text](./images/blink.png)
+
+**If you are the first to finish this step, raise your hand to get a bonus point!**
+
+### 16.  Exercise 4 (optional): Test external buzzer
+
+Use the breadboard and cables to connect the buzzer to your board.
+Here's the schematic of the board. Connect the buzzer to Pin `D4` and to ground.
+
+![alt text](./images/nodemcu-esp8266-board.png)
+
+Once everything is connected, upload `main.py` located in the `ex3-buzzer` folder. Then reset the board. Now you should hear the start of `Frère Jacques`.
 
 ### 17. Exercise 5: Register for the quiz
 
