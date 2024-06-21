@@ -118,7 +118,7 @@ First type `import webrepl_setup`, then `E` and then choose a password.
 
 ```cmd
 import webrepl_setup
-``
+```
 
 ![alt text](./images/webreplsetup.png)
 
