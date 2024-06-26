@@ -48,7 +48,7 @@ If the above command doesn't work type the one below:
 python3 -m pip install esptool
 ```
 
-### 4. Install CH340/CH210x drivers
+### 4. Install CH210x drivers
 
 Go to the `CH210x-drivers` folder and run `CP210xVCPInstaller_x64.exe`. Then install.
 
