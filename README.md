@@ -103,7 +103,7 @@ Copy the commands shown in the output of the `help()` command, replacing:
 - `<key>` with the WiFi password `@smile24` 
 
 ```cmd
-import netwwork
+import network
 sta_if  = network.WLAN(network.STA_IF); sta_if.active(True)
 # sta_if.connect("<AP_name>", "<key>")
 sta_if.connect("Silversquare Guest", "@smile24")
